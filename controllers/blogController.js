@@ -53,7 +53,7 @@ exports.deleteBlog = async (req, res) => {
 
 exports.getMyBlogs = async (req, res) => {
   try {
-    const blogs = await Blog.find({ userId: req.user.id });  // <-- changed here
+    const blogs = await Blog.find({ userId: req.user.id });  
     res.json(blogs);
   } catch (err) {
     res.status(500).json({ error: "Failed to fetch your blogs" });
